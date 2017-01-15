@@ -1,0 +1,9 @@
+<!-- 株価データを取得するためのクローリングを命令するページ -->
+<%= form_for @stocks_data_catchup_crawler do |f| %>
+
+  <!-- 以下に調べたい証券コードを入力するフォームを設置 -->
+  <%= f.label :securities_code %>
+  <%= f.number_field :securities_code %>
+
+  <%= f.submit "株価データを取得" %>
+<% end %>

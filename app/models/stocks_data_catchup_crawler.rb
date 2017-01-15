@@ -1,4 +1,5 @@
-class NokogiriStocksController < ApplicationController
+class StocksDataCatchupCrawler < ActiveRecord::Base
+
   # _*_ coding: utf-8 _*_
 
   require 'nokogiri'
@@ -23,7 +24,6 @@ class NokogiriStocksController < ApplicationController
   def get_daily_data(doc)
     doc.xpath("//table[@class='boardFin yjSt marB6']/tr").each {|element|
 
-      # 日付行と株式分割告知を回避
       if element.children[0].text !=
         "日付" && element.children[1][:class] != "through"
 
@@ -50,8 +50,8 @@ class NokogiriStocksController < ApplicationController
     }
   end
 
-  # 証券コード
-  code = "4689"
+  # 検索したい証券コード（下記はトヨタ自動車の証券コード。一旦、実数でテストを行い、正常に挙動することを確認でき次第、変数に置き換える）
+  code = "7203"
 
   # 検索日
   day = Time.now
@@ -68,4 +68,5 @@ class NokogiriStocksController < ApplicationController
     break if !has_next_page?(doc)
     num = num + 1
   }
+  
 end

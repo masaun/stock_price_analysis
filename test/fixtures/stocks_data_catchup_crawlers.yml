@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: 2017-01-15
+  open_price: 1
+  hight_price: 1
+  low_price: 1
+  closing_price: 1
+  volume: 1
+
+two:
+  day: 2017-01-15
+  open_price: 1
+  hight_price: 1
+  low_price: 1
+  closing_price: 1
+  volume: 1

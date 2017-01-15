@@ -1,11 +1,11 @@
-class ChartsController < NokogiriStocksController
+class ChartsController < StocksDataCatchupCrawlerController
 
   def index
     @charts = Chart.all
   end
 
   def new
-    @chart = Chart.new
+    @charts = Chart.new
   end
 
 end
