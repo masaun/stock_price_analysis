@@ -1,0 +1,6 @@
+  <h1>株価一覧</h1>
+  <% @stocks_data_catchup_crawlers.each do |data| %>
+  <p><%= link_to data.securities_code, data %></p>
+  <% end %>
+
+  <%= link_to "新規作成", new_stocks_data_catchup_crawler_path %>
